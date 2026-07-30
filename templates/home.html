@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ascii-Art-Web</title>
+    <link rel="stylesheet" href="/style/styles.css">
+</head>
+
+<body>
+    <div id="page-grid">
+        <div id="title-box">
+            <h1 id="title">ASCII ART WEB</h1>
+        </div>
+        <label id="title-terminal">[Ascii Terminal]</label>
+        <form action="ascii" method="post">
+            <div id="text-box">
+                <label id="text-area-title">Enter your text:</label>
+                <textarea id="text-area" name="text"
+                    placeholder="Write the best thing you can think of here..."></textarea>
+            </div>
+            <div id="buttons">
+                <div id="options-box">
+                    <input type="radio" id="standard" class="options-check" name="template" value="standard" checked>
+                    <label class="options" for="standard">Standard</label>
+                    <input type="radio" id="shadow" class="options-check" name="template" value="shadow">
+                    <label class="options" for="shadow">Shadow</label>
+                    <input type="radio" id="thinkertoy" class="options-check" name="template" value="thinkertoy">
+                    <label class="options" for="thinkertoy">Thinkertoy</label>
+                </div>
+                <button type="submit" id="generate-button">GENERATE</button>
+            </div>
+        </form>
+        <label id="title-result">[Ascii Output]</label>
+        <pre id="result">{{.Result}}</pre>
+    </div>
+</body>
+
+</html>
