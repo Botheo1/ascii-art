@@ -1,5 +1,5 @@
-From golang:1.26.3 AS builder
-Workdir /app
+FROM golang:1.26.3 AS builder
+WORKDIR /app
 COPY go.mod .
 RUN go mod download
 COPY . .
@@ -9,5 +9,7 @@ FROM alpine:latest
 LABEL version="1.0.0"
 WORKDIR /app
 COPY --from=builder /app/myapp .
+COPY --from=builder /app/templates ./templates
+COPY --from=builder /app/style ./style
 EXPOSE 8080
 CMD ["./myapp"]

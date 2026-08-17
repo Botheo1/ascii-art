@@ -31,8 +31,8 @@ func main() {
 	http.HandleFunc("/ascii", AsciiHandler)
 
 	// Launch the server
-	fmt.Println("(http://localhost:10100) - Server started on port", ":10100")
-	http.ListenAndServe(":10100", nil)
+	fmt.Println("(http://localhost:8080) - Server started on port", ":8080")
+	http.ListenAndServe(":8080", nil)
 }
 
 func HomeHandler(w http.ResponseWriter, r *http.Request) {
